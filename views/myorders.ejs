@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Orders</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@500&display=swap" rel="stylesheet">
+	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    
+	<link rel="stylesheet" href="/orderstyle.css">
+</head>
+<body style="background-image: url('https://i.pinimg.com/736x/e0/e7/7d/e0e77d5a4eb63700b98fdc724a6a7c50.jpg')">
+	<h1 class="text-center">My Orders</h1>
+	<div class="order-data">
+  <%for(let i=dates.length-1;i>=0;i--){%>
+  <h2 class="text-center" style="color: white;"><%=dates[i]%></h2>
+	<%for(let order of user_orders){%>
+  <%if(order.date==dates[i]){%>
+		<div class="card" style="background-color: black; color: white;">
+  			<div class="card-body">
+  			<div class="row">
+  				<div class="col-lg-6">
+    		<h5 class="card-title" style="text-transform: uppercase;"><%=order.item_name%></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%=order.price*order.qty%></h6>
+    <p class="card-text"><b>Ordered on: </b><%=order.date%></p>
+    <p class="card-text"><b>payment method: </b><%=order.pay_method%></p>
+    <%if(order.holder){%>
+     <p class="card-text"><b>Card number: XXXX</b><%=order.num%></p>
+    <p class="card-text"><b>Name: </b><%=order.holder%></p>
+    <%}%>
+    </div>
+    <div class="col-lg-6 text-right">
+    	<h5 class="card-title">Quantity: <%=order.qty%></h5>
+    </div>
+</div>
+  </div>
+  <hr>
+</div>
+<%}%>
+	<%}%>
+  <%}%>
+	</div>
+	<script src="https://kit.fontawesome.com/c8338092a9.js" crossorigin="anonymous"></script>
+	 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+     <script src="/app.js"></script>
+</body>
+</html>

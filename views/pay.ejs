@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Checkout</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@500&display=swap" rel="stylesheet">
+	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="/pay.css">
+	
+</head>
+<body>
+	<div class="form-container">
+		<h1>Credit Or Debit Card</h1>
+		<h4>Recommended to all customers</h4>
+		<h5 class="text-muted">Supports JCB, Visa, MasterCard, and American Express credit or debit cards</h5>
+		<h5 class="info">Prepaid cards, virtual cards, and gift cards are not accepted</h5>
+		<form action="/successful" method="post">
+			<div class="mb-3">
+			<label style="font-weight: 500;">Card Number<span style="color: #f29305;">*</span></label>
+			<br>
+			<input type="text" name="card_num">
+		</div>
+		<div class="mb-3">
+			<label style="font-weight: 500;">Expiration Date<span style="color: #f29305;">*</span></label>
+			<br>
+			<input type="text" name="month" placeholder="MM">
+			<input type="text" name="year" placeholder="YY">
+		</div>
+		<div class="mb-3">
+			<label style="font-weight: 500;">CVV<span style="color: #f29305;">*</span></label>
+			<br>
+			<input type="text" name="cvv" placeholder="The cvv will not be saved">
+			
+		</div>
+		<div class="mb-3">
+			<label style="font-weight: 500;">Name on Card<span style="color: #f29305;">*</span></label>
+			<br>
+			<input type="text" name="holder" placeholder="Name">
+			
+		</div>
+		<button type="submit" class="btn btn-dark">Submit</button>
+		</form>
+		<p>OR</p>
+		<a href='/successful'>Cash on Delivery</a>
+	</div>
+
+		<script src="https://kit.fontawesome.com/c8338092a9.js" crossorigin="anonymous"></script>
+	 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+   		 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+     	<script src="/app.js"></script>
+</body>
+</html>

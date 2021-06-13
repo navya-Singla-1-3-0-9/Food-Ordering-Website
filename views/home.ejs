@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@500&display=swap" rel="stylesheet">
+	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    
+	<link rel="stylesheet"  href="/styles.css">
+</head>
+<body>
+
+	<div class="header">
+		<%-include("nav")%>
+		<h1>Goodbye Junk Food!<br>Hello Super Healthy Meals.</h1>
+		<a href="/order-online"><button class="btn btn-light rounded-pill order">I'm Hungry</button></a>
+		<a href="/#more"><button class="btn btn-light rounded-pill browse">Show me more</button></a>
+	</div>
+	<div class="benefits">
+		<div class="row">
+			<div class="col-lg-4">
+				<i class="fas fa-shopping-cart fa-5x"></i>
+				<h2>ORDER ANYTHING</h2>
+				<p>We don't limit your creativity, so order whatever you feel like! You can choose from our menu with over 100 delicious meals. It's up to you!</p>
+			</div>
+			<div class="col-lg-4">
+				<i class="far fa-clock fa-5x"></i>
+				<h2>READY IN 30 MINUTES!</h2>
+				<p>We don't limit your creativity, so order whatever you feel like! You can choose from our menu with over 100 delicious meals. It's up to you!</p>
+			</div>
+			<div class="col-lg-4">
+				<i class="fas fa-utensils fa-5x"></i>
+				<h2>DELICIOUS FOOD</h2>
+				<p>We don't limit your creativity, so order whatever you feel like! You can choose from our menu with over 100 delicious meals. It's up to you!</p>
+			</div>
+		</div>
+	</div>
+	<div class="favorites" id="more">
+		
+		<h2 class="text-center cursive">Our Most loved dishes</h2>
+		 	<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  			<div class="carousel-inner">
+    			<div class="carousel-item active">
+      				<div class="row dishes">
+			<div class="col-lg-4">
+				<div class= "wrap">
+				<img src="/images/pasta.jpg" alt= "pasta" style="height:300px;" class="dish img-fluid">
+				<div class="descr text-center text">
+					<h3>Pasta</h3>
+					<p>Which one suits you? Red sauce or white sauce?</p>
+				</div>
+			</div>
+			</div>
+			<div class="col-lg-4">
+				<div class= "wrap">
+				<img src="/images/pizza.jpg" alt= "pizza" style="height:300px;" class="dish img-fluid">
+				<div class="descr text-center text">
+					<h3>Pizza</h3>
+					<p>Customizable toppings! Yummy cheesy pizzas</p>
+				</div>
+			</div>
+			</div>
+			<div class="col-lg-4">
+				<div class= "wrap">
+				<img src="/images/pancake.jpg" alt= "pancake" style="height:300px;" class="dish img-fluid">
+				<div class="descr text-center text">
+					<h3>Pancakes</h3>
+					<p>Find the most exotic pancakes for a perfect breakfast!</p>
+				</div>
+			</div>
+			</div>
+			
+			
+		</div>
+    			</div>
+    		<div class="carousel-item">
+      			<div class="row dishes justify-content-center">
+			<div class="col-lg-4">
+				<div class= "wrap">
+				<img src="/images/fries.jpg" alt= "fries" style="height:300px;" class="dish img-fluid">
+				<div class="descr text-center text">
+					<h3>FRIES</h3>
+					<p> Our sizzling hot fries! Now available with cheese.</p>
+				</div>
+			</div>
+			</div>
+			
+			<div class="col-lg-4">
+				<div class= "wrap">
+				<img src="/images/burg.jpg" alt= "burger" style="height:300px;" class="dish img-fluid">
+				<div class="descr text-center text">
+					<h3>Burger</h3>
+					<p>Offering many customizable varieties of burgers!</p>
+				</div>
+			</div>
+
+			</div>
+			<div class="col-lg-4">
+				<div class= "wrap">
+				<img src="/images/chinese.jpg" alt= "chinese" style="height:300px;" class="dish img-fluid">
+				<div class="descr text-center text">
+					<h3>Chinese</h3>
+					<p>Try our Mouthwatering exotic variety of chinese dishes today</p>
+				</div>
+			</div>
+			</div>
+			
+		</div>
+    		</div>
+    		<div class="carousel-item">
+      			<div class="row dishes">
+			<div class="col-lg-4">
+				<div class= "wrap">
+				<img src="/images/soup.jpg" alt= "soup" style="height:300px;" class="dish img-fluid">
+				<div class="descr text-center text">
+					<h3>Soups</h3>
+					<p>We have the perfect appetizers for you!</p>
+				</div>
+			</div>
+			</div>
+			<div class="col-lg-4">
+				<div class= "wrap">
+				<img src="/images/fajita.jpg" alt= "fajita" style="height:300px;" class="dish img-fluid">
+				<div class="descr text-center text">
+					<h3>Fajitas</h3>
+					<p>Choose among special chicken and vegetable Fajitas!</p>
+				</div>
+			</div>
+			</div>
+			
+			<div class="col-lg-4">
+				<div class= "wrap">
+				<img src="/images/indian.jpg" alt= "indian" style="height:300px;" class="dish img-fluid">
+				<div class="descr text-center text">
+					<h3>Indian Dishes</h3>
+					<p>We bring delicious Indian dishes at your doorstep</p>
+				</div>
+			</div>
+			</div>
+			
+		</div>
+    		</div>
+  		</div>
+  		 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+		<a href="/order-online"><button class="btn btn-light rounded-pill order oc">Order Now</button></a>
+	</div>
+	<h2 class="text-center cursive">This week's special</h2>
+	<div class="row special">
+            <div class="col-md-6">
+              <div class="about_box text-center">
+                <h3 class="cursive">Grilled Platter</h3>
+                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard</p>
+            </div>
+        </div>
+            <div class="col-md-6 about_img_boxpdnt">
+              <div class="about_img">
+              	<div class="box text-center">
+                <figure><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlM_GHzYUnpCwpuIJLP-q0LZOAWa9TamnLUA&usqp=CAU" alt="website template image"></figure>
+            </div>
+              </div>
+            </div>
+          
+      </div>
+	
+	<h2 class="cursive text-center">Browse Our Menu</h2>
+	<div class="menu-preview">
+		<div class="row">
+			<div class="col-lg-4 text-center">
+				<a href="/menu/breakfast">
+				<img src="/images/bf.jpg" style="height: 400px; border-radius: 100%;" class="img-fluid">
+				<h2 class="cursive text-center" style="color: white;">Breakfast</h2>
+			</a>
+			</div>
+			
+			<div class="col-lg-4 text-center">
+				<a href="/menu/lunch">
+				<img src="/images/lunch.jpg" style="height: 400px; border-radius: 100%;" class="img-fluid">
+				<h2 class="cursive text-center" style="color: white;">Lunch</h2>
+			</a>
+			</div>
+
+			<div class="col-lg-4 text-center">
+				<a href="/menu/dinner">
+				<img src="/images/dinner.jpg" style="height: 400px; border-radius: 100%;" class="img-fluid">
+				<h2 class="cursive text-center" style="color: white;">Dinner</h2>
+			</a>
+			</div>
+		</div>
+
+	</div>
+
+		<div class="last">
+			<div class="row">
+			<div class="col-lg-6">
+			<div class="contact-us"id="contact" style="color: white;">
+				<form class="form-group">
+					<h2 class="cursive text-center" style="color: white;">Contact Us</h2>
+					<div class="mb-5">
+						<label>Username</label>
+						<input type="text" name="username" class="form-control">
+					</div>
+					<div class="mb-5">
+						<label>Email</label>
+						<input type="Email" name="email" class="form-control">
+					</div>
+					<div class="mb-5">
+						<label>Phone</label>
+						<input type="text" name="contact" class="form-control">
+					</div>
+					<div class="mb-5">
+						<label>Message</label>
+						<textarea name="Message" class="form-control"></textarea>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="col-lg-6 text-center">
+		<div class="time-card text-center">
+			<div class= "b-card">
+			<h2 class="cursive" style="color: black;">Delivery Hours</h2>
+			<h4 class="cursive" style="color: black; font-size: 40px;"><i>Monday</i></h4>
+			<h5 class="text-muted"><i>9:30 a.m - 11:30 p.m.</i></h5>
+			<h4 class="cursive" style="color: black; font-size: 40px;"><i>Tuesday</i></h4>
+			<h5 class="text-muted"><i>10:30 a.m - 11:30 p.m.</i></h5>
+			<h4 class="cursive" style="color: black; font-size: 40px;"><i>Wednesday</i></h4>
+			<h5 class="text-muted"><i>9:30 a.m - 11:30 p.m.</i></h5>
+			<h4 class="cursive" style="color: black; font-size: 40px;"><i>Thursday</i></h4>
+			<h5 class="text-muted"><i>9:30 a.m - 11:30 p.m.</i></h5>
+			<h4 class="cursive" style="color: black; font-size: 40px;"><i>Friday</i></h4>
+			<h5 class="text-muted"><i>9:30 a.m - 11:30 p.m.</i></h5>
+			<h4 class="cursive" style="color: black; font-size: 40px;"><i>Saturday</i></h4>
+			<h5 class="text-muted"><i>11:30 a.m - 6:30 p.m.</i></h5>
+			<h4 class="cursive" style="color: black; font-size: 40px;"><i>Sunday</i></h4>
+			<h5 class="text-muted"><i>11:30 a.m - 6:30 p.m.</i></h5>
+			</div>
+		</div>
+		</div>
+
+		</div>
+	</div>
+
+	<script src="https://kit.fontawesome.com/c8338092a9.js" crossorigin="anonymous"></script>
+	 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+     <script src="/app.js"></script>
+</body>
+</html>

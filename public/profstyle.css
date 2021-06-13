@@ -1,0 +1,25 @@
+body{
+	background-color: #d1d1e0;
+}
+.header{
+	height:600px;
+	background-image: url('prof2.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: black;
+	padding-left: 20%;
+	padding-right: 20%;
+	padding-top: 400px;
+
+}
+.btn{
+	margin-left: 45%;
+}
+@media (max-width: 900px){
+	.header{
+		padding-left: 5%;
+	padding-right: 5%;
+	}
+}

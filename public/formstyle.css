@@ -1,0 +1,10 @@
+body{
+	background-image: url('https://images.pexels.com/photos/286283/pexels-photo-286283.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: black;
+	padding-left: 50px;
+	margin-bottom: 7%;
+}

@@ -1,0 +1,16 @@
+body{
+	background-color: black;
+}
+.form-container{
+	background-color: white;
+	margin-left: 25%;
+	margin-right: 25%;
+	padding: 30px;
+	margin-top: 7%;
+	border:5px solid #f29305;
+}
+.info{
+	border-left:10px solid #f29305;
+	background-color: #fde0b4;
+	color: #f29305;
+}

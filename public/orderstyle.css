@@ -1,0 +1,36 @@
+h1{
+	font-family: "Tangerine",cursive;
+	font-size: 100px;
+	color: white;
+	font-weight: 900;
+}
+
+.card{
+	opacity: 0.85;
+}
+img{
+	height:80px;
+	border-radius: 100%;
+	margin-right: 10px;
+}
+
+body{
+	background-image: url('https://images.pexels.com/photos/286283/pexels-photo-286283.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: black;
+	padding-left: 50px;
+	margin-bottom: 7%;
+}
+.order-data{
+	margin-left: 30%; 
+	margin-right: 30%;
+}
+@media (max-width: 900px){
+	.order-data{
+		margin-right: 5%;
+		margin-left: 5%;
+	}
+}

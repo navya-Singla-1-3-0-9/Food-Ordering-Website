@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>order now</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@500&display=swap" rel="stylesheet">
+	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    
+	<link rel="stylesheet" href="orderOnline.css">
+</head>
+<body>
+
+	<div style="margin-left:10%; width: 80%; margin-bottom: 100px;">
+  <%-include('nav')%>
+  <%-include('flash')%>
+</div>
+	<main>
+		<!--<%for(let item of items){%>
+			<h2 style="color: white;"><%=item.dish%></h2>
+		<%}%>-->
+		<h1 class="text-center"><i class="fas fa-pizza-slice"></i>Menu</h1>
+	<div class="row">
+	<div class="col-lg-2 text-center cl">
+	
+		<%if(name){%>
+			<h5 style="color: white; text-transform: uppercase;">Hi <%=name%></h5>
+		<%}else{%>
+		<h5>Hi Guest</h5>
+		<%}%>
+	
+	<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+		
+  
+  <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-everyday" role="tab" aria-controls="v-pills-home" aria-selected="true">Everyday Value Menu</a>
+  <a class="nav-link " id="v-pills-home-tab" data-toggle="pill" href="#v-pills-chefcuts" role="tab" aria-controls="v-pills-home" aria-selected="true">Chef Cuts</a>
+  <a class="nav-link " id="v-pills-home-tab" data-toggle="pill" href="#v-pills-appetizers" role="tab" aria-controls="v-pills-home" aria-selected="true">Appetizers</a>
+  <a class="nav-link " id="v-pills-home-tab" data-toggle="pill" href="#v-pills-soups-salads" role="tab" aria-controls="v-pills-home" aria-selected="true">Soups and Salads</a>
+  <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-burger" role="tab" aria-controls="v-pills-profile" aria-selected="false">Big Mouth Burgers</a>
+  <a class="nav-link " id="v-pills-home-tab" data-toggle="pill" href="#v-pills-pasta" role="tab" aria-controls="v-pills-home" aria-selected="true">Pasta</a>
+  <a class="nav-link " id="v-pills-home-tab" data-toggle="pill" href="#v-pills-pizza" role="tab" aria-controls="v-pills-home" aria-selected="true">Pizza and Flatbread</a>
+  <a class="nav-link " id="v-pills-home-tab" data-toggle="pill" href="#v-pills-seafood" role="tab" aria-controls="v-pills-home" aria-selected="true">Seafood and chicken</a>
+  <a class="nav-link " id="v-pills-home-tab" data-toggle="pill" href="#v-pills-rice" role="tab" aria-controls="v-pills-home" aria-selected="true">Rice Bowl</a>
+  <a class="nav-link " id="v-pills-home-tab" data-toggle="pill" href="#v-pills-taco" role="tab" aria-controls="v-pills-home" aria-selected="true">Taco and Quesadillas</a>
+  <a class="nav-link " id="v-pills-home-tab" data-toggle="pill" href="#v-pills-sides" role="tab" aria-controls="v-pills-home" aria-selected="true">Sides</a>
+  <a class="nav-link " id="v-pills-home-tab" data-toggle="pill" href="#v-pills-Fajita" role="tab" aria-controls="v-pills-home" aria-selected="true">Fajita</a>
+  <a class="nav-link " id="v-pills-home-tab" data-toggle="pill" href="#v-pills-enchiladas" role="tab" aria-controls="v-pills-home" aria-selected="true">enchiladas and Burritos</a>
+  <a class="nav-link " id="v-pills-home-tab" data-toggle="pill" href="#v-pills-dessert" role="tab" aria-controls="v-pills-home" aria-selected="true">Dessert</a>
+</div>
+</div>
+<div class="col-lg-7 cl" >
+<div class="tab-content" id="v-pills-tabContent">
+  <div class="tab-pane fade show active" id="v-pills-everyday" role="tabpanel" aria-labelledby="v-pills-home-tab">
+  	<%for(let item of items){%>
+  	<%if(item.category==='everyday'){%>
+  		 <div class="card mb-5">
+  		 	<div class="row">
+          
+  		 		<div class="col-md-4">
+  		 			<img class="img-fluid" src="<%=item.img%>">
+  		 		</div>
+  		 		<div class="col-md-8">
+  		 			<div class="card-body">
+  		 			<h5 class="card-title">
+  		 				<%=item.dish%>
+  		 			</h5>
+  		 			<p class="card-text"><i><%=item.description%></i></p>
+  		 			<p class="card-text"><small class="text-muted"><%=item.price%></small></p>
+  		 			
+  		 			<%if(role=='admin'){%>
+  		 			<a href="/<%=item.id%>/delete" class="btn btn-danger orange">Delete</a>
+  		 			<a href="/<%=item.id%>/edit" class="btn btn-info">Edit</a>
+  		 			<%}else if(role=='customer'){%>
+            <a href="/<%=item.id%>/addtocart" class="btn btn-danger orange">Add to cart</a>
+            <%}%>
+  		 		</div>
+  		 	</div>
+  		 </div>
+      </div>
+      		<%}%>
+  		<%}%>
+  </div>
+   <div class="tab-pane fade show" id="v-pills-chefcuts" role="tabpanel" aria-labelledby="v-pills-home-tab">
+  	<%for(let item of items){%>
+  	<%if(item.category==='chefcuts'){%>
+  		 <div class="card mb-5">
+  		 	<div class="row">
+          
+  		 		<div class="col-md-4">
+  		 			<img class="img-fluid" src="<%=item.img%>" style="width: 220px;">
+  		 		</div>
+  		 		<div class="col-md-8">
+  		 			<div class="card-body">
+  		 			<h5 class="card-title" >
+  		 				<%=item.dish%>
+  		 			</h5>
+  		 			<p class="card-text"><i><%=item.description%></i></p>
+  		 			<p class="card-text"><small class="text-muted"><%=item.price%></small></p>
+  		 			<%if(role=='admin'){%>
+            <a href="/<%=item.id%>/delete" class="btn btn-danger orange">Delete</a>
+            <a href="/<%=item.id%>/edit" class="btn btn-info">Edit</a>
+            <%}else if(role=='customer'){%>
+            <a href="/<%=item.id%>/addtocart" class="btn btn-danger orange">Add to cart</a>
+            <%}%>
+  		 		</div>
+  		 	</div>
+  		 </div>
+      </div>
+      		<%}%>
+  		<%}%>
+  </div>
+   <div class="tab-pane fade show" id="v-pills-appetizers" role="tabpanel" aria-labelledby="v-pills-home-tab">
+  	<%for(let item of items){%>
+  	<%if(item.category==='appetizer'){%>
+  		 <div class="card mb-5">
+  		 	<div class="row">
+          
+  		 		<div class="col-md-4">
+  		 			<img class="img-fluid" src="<%=item.img%>" style="width: 220px;">
+  		 		</div>
+  		 		<div class="col-md-8">
+  		 			<div class="card-body">
+  		 			<h5 class="card-title">
+  		 				<%=item.dish%>
+  		 			</h5>
+  		 			<p class="card-text"><i><%=item.description%></i></p>
+  		 			<p class="card-text"><small class="text-muted"><%=item.price%></small></p>
+  		 			<%if(role=='admin'){%>
+            <a href="/<%=item.id%>/delete" class="btn btn-danger orange">Delete</a>
+            <a href="/<%=item.id%>/edit" class="btn btn-info">Edit</a>
+            <%}else if(role=='customer'){%>
+            <a href="/<%=item.id%>/addtocart" class="btn btn-danger orange">Add to cart</a>
+            <%}%>
+  		 		</div>
+  		 	</div>
+  		 </div>
+      </div>
+      		<%}%>
+  		<%}%>
+  </div>
+  <div class="tab-pane fade show" id="v-pills-soups-salads" role="tabpanel" aria-labelledby="v-pills-home-tab">
+  	<%for(let item of items){%>
+  	<%if(item.category==='soup'){%>
+  		 <div class="card mb-5">
+  		 	<div class="row">
+          
+  		 		<div class="col-md-4">
+  		 			<img class="img-fluid" src="<%=item.img%>" style="width: 220px;">
+  		 		</div>
+  		 		<div class="col-md-8">
+  		 			<div class="card-body">
+  		 			<h5 class="card-title" >
+  		 				<%=item.dish%>
+  		 			</h5>
+  		 			<p class="card-text"><i><%=item.description%></i></p>
+  		 			<p class="card-text"><small class="text-muted"><%=item.price%></small></p>
+  		 			<%if(role=='admin'){%>
+            <a href="/<%=item.id%>/delete" class="btn btn-danger orange">Delete</a>
+            <a href="/<%=item.id%>/edit" class="btn btn-info">Edit</a>
+            <%}else if(role=='customer'){%>
+            <a href="/<%=item.id%>/addtocart" class="btn btn-danger orange">Add to cart</a>
+            <%}%>
+  		 		</div>
+  		 	</div>
+  		 </div>
+      </div>
+      		<%}%>
+  		<%}%>
+  </div>
+  <div class="tab-pane fade show" id="v-pills-burger" role="tabpanel" aria-labelledby="v-pills-home-tab">
+  	<%for(let item of items){%>
+  	<%if(item.category==='burger'){%>
+  		 <div class="card mb-5">
+  		 	<div class="row">
+          
+  		 		<div class="col-md-4">
+  		 			<img class="img-fluid" src="<%=item.img%>" style="width: 220px;">
+  		 		</div>
+  		 		<div class="col-md-8">
+  		 			<div class="card-body">
+  		 			<h5 class="card-title">
+  		 				<%=item.dish%>
+  		 			</h5>
+  		 			<p class="card-text"><i><%=item.description%></i></p>
+  		 			<p class="card-text"><small class="text-muted"><%=item.price%></small></p>
+  		 			<%if(role=='admin'){%>
+            <a href="/<%=item.id%>/delete" class="btn btn-danger orange">Delete</a>
+            <a href="/<%=item.id%>/edit" class="btn btn-info">Edit</a>
+            <%}else if(role=='customer'){%>
+            <a href="/<%=item.id%>/addtocart" class="btn btn-danger orange">Add to cart</a>
+            <%}%>
+  		 		</div>
+  		 	</div>
+  		 </div>
+      </div>
+      		<%}%>
+  		<%}%>
+  </div>
+   <div class="tab-pane fade show" id="v-pills-pasta" role="tabpanel" aria-labelledby="v-pills-home-tab">
+  	<%for(let item of items){%>
+  	<%if(item.category==='pasta'){%>
+  		 <div class="card mb-5">
+  		 	<div class="row">
+          
+  		 		<div class="col-md-4">
+  		 			<img class="img-fluid" src="<%=item.img%>" style="width: 220px;">
+  		 		</div>
+  		 		<div class="col-md-8">
+  		 			<div class="card-body">
+  		 			<h5 class="card-title">
+  		 				<%=item.dish%>
+  		 			</h5>
+  		 			<p class="card-text"><i><%=item.description%></i></p>
+  		 			<p class="card-text"><small class="text-muted"><%=item.price%></small></p>
+  		 			<%if(role=='admin'){%>
+            <a href="/<%=item.id%>/delete" class="btn btn-danger orange">Delete</a>
+            <a href="/<%=item.id%>/edit" class="btn btn-info">Edit</a>
+            <%}else if(role=='customer'){%>
+            <a href="/<%=item.id%>/addtocart" class="btn btn-danger orange">Add to cart</a>
+            <%}%>
+  		 		</div>
+  		 	</div>
+  		 </div>
+      </div>
+      		<%}%>
+  		<%}%>
+  </div>
+
+   <div class="tab-pane fade show" id="v-pills-pizza" role="tabpanel" aria-labelledby="v-pills-home-tab">
+  	<%for(let item of items){%>
+  	<%if(item.category==='pizza'){%>
+  		 <div class="card mb-5">
+  		 	<div class="row">
+          
+  		 		<div class="col-md-4">
+  		 			<img class="img-fluid" src="<%=item.img%>" style="width: 220px;">
+  		 		</div>
+  		 		<div class="col-md-8">
+  		 			<div class="card-body">
+  		 			<h5 class="card-title">
+  		 				<%=item.dish%>
+  		 			</h5>
+  		 			<p class="card-text"><i><%=item.description%></i></p>
+  		 			<p class="card-text"><small class="text-muted"><%=item.price%></small></p>
+  		 		<%if(role=='admin'){%>
+            <a href="/<%=item.id%>/delete" class="btn btn-danger orange">Delete</a>
+            <a href="/<%=item.id%>/edit" class="btn btn-info">Edit</a>
+            <%}else if(role=='customer'){%>
+            <a href="/<%=item.id%>/addtocart" class="btn btn-danger orange">Add to cart</a>
+            <%}%>
+  		 		</div>
+  		 	</div>
+  		 </div>
+      </div>
+      		<%}%>
+  		<%}%>
+  </div>
+   <div class="tab-pane fade show" id="v-pills-seafood" role="tabpanel" aria-labelledby="v-pills-home-tab">
+  	<%for(let item of items){%>
+  	<%if(item.category==='seafood'){%>
+  		 <div class="card mb-5">
+  		 	<div class="row">
+          
+  		 		<div class="col-md-4">
+  		 			<img class="img-fluid" src="<%=item.img%>" style="width: 220px;">
+  		 		</div>
+  		 		<div class="col-md-8">
+  		 			<div class="card-body">
+  		 			<h5 class="card-title">
+  		 				<%=item.dish%>
+  		 			</h5>
+  		 			<p class="card-text"><i><%=item.description%></i></p>
+  		 			<p class="card-text"><small class="text-muted"><%=item.price%></small></p>
+  		 			<%if(role=='admin'){%>
+            <a href="/<%=item.id%>/delete" class="btn btn-danger orange">Delete</a>
+            <a href="/<%=item.id%>/edit" class="btn btn-info">Edit</a>
+            <%}else if(role=='customer'){%>
+            <a href="/<%=item.id%>/addtocart" class="btn btn-danger orange">Add to cart</a>
+            <%}%>
+  		 		</div>
+  		 	</div>
+  		 </div>
+      </div>
+      		<%}%>
+  		<%}%>
+  </div>
+
+  <div class="tab-pane fade show" id="v-pills-rice" role="tabpanel" aria-labelledby="v-pills-home-tab">
+  	<%for(let item of items){%>
+  	<%if(item.category==='rice'){%>
+  		 <div class="card mb-5">
+  		 	<div class="row">
+          
+  		 		<div class="col-md-4">
+  		 			<img class="img-fluid" src="<%=item.img%>" style="width: 220px;">
+  		 		</div>
+  		 		<div class="col-md-8">
+  		 			<div class="card-body">
+  		 			<h5 class="card-title">
+  		 				<%=item.dish%>
+  		 			</h5>
+  		 			<p class="card-text"><i><%=item.description%></i></p>
+  		 			<p class="card-text"><small class="text-muted"><%=item.price%></small></p>
+  		 		<%if(role=='admin'){%>
+            <a href="/<%=item.id%>/delete" class="btn btn-danger orange">Delete</a>
+            <a href="/<%=item.id%>/edit" class="btn btn-info">Edit</a>
+            <%}else if(role=='customer'){%>
+            <a href="/<%=item.id%>/addtocart" class="btn btn-danger orange">Add to cart</a>
+            <%}%>
+  		 		</div>
+  		 	</div>
+  		 </div>
+      </div>
+      		<%}%>
+  		<%}%>
+  </div>
+   <div class="tab-pane fade show" id="v-pills-taco" role="tabpanel" aria-labelledby="v-pills-home-tab">
+  	<%for(let item of items){%>
+  	<%if(item.category==='taco'){%>
+  		 <div class="card mb-5">
+  		 	<div class="row">
+          
+  		 		<div class="col-md-4">
+  		 			<img class="img-fluid" src="<%=item.img%>" style="width: 220px;">
+  		 		</div>
+  		 		<div class="col-md-8">
+  		 			<div class="card-body">
+  		 			<h5 class="card-title">
+  		 				<%=item.dish%>
+  		 			</h5>
+  		 			<p class="card-text"><i><%=item.description%></i></p>
+  		 			<p class="card-text"><small class="text-muted"><%=item.price%></small></p>
+  		 			<%if(role=='admin'){%>
+            <a href="/<%=item.id%>/delete" class="btn btn-danger orange">Delete</a>
+            <a href="/<%=item.id%>/edit" class="btn btn-info">Edit</a>
+            <%}else if(role=='customer'){%>
+            <a href="/<%=item.id%>/addtocart" class="btn btn-danger orange">Add to cart</a>
+            <%}%>
+  		 		</div>
+  		 	</div>
+  		 </div>
+      </div>
+      		<%}%>
+  		<%}%>
+  </div>
+  
+   <div class="tab-pane fade show" id="v-pills-Fajita" role="tabpanel" aria-labelledby="v-pills-home-tab">
+  	<%for(let item of items){%>
+  	<%if(item.category==='fajita'){%>
+  		 <div class="card mb-5">
+  		 	<div class="row">
+          
+  		 		<div class="col-md-4">
+  		 			<img class="img-fluid" src="<%=item.img%>" style="width: 220px;">
+  		 		</div>
+  		 		<div class="col-md-8">
+  		 			<div class="card-body">
+  		 			<h5 class="card-title" >
+  		 				<%=item.dish%>
+  		 			</h5>
+  		 			<p class="card-text"><i><%=item.description%></i></p>
+  		 			<p class="card-text"><small class="text-muted"><%=item.price%></small></p>
+  		 		 <%if(role=='admin'){%>
+            <a href="/<%=item.id%>/delete" class="btn btn-danger orange">Delete</a>
+            <a href="/<%=item.id%>/edit" class="btn btn-info">Edit</a>
+            <%}else if(role=='customer'){%>
+            <a href="/<%=item.id%>/addtocart" class="btn btn-danger orange">Add to cart</a>
+            <%}%>
+  		 		</div>
+  		 	</div>
+  		 </div>
+      </div>
+      		<%}%>
+  		<%}%>
+  </div>
+  <div class="tab-pane fade show" id="v-pills-sides" role="tabpanel" aria-labelledby="v-pills-home-tab">
+  	<%for(let item of items){%>
+  	<%if(item.category==='sides'){%>
+  		 <div class="card mb-5">
+  		 	<div class="row">
+          
+  		 		<div class="col-md-4">
+  		 			<img class="img-fluid" src="<%=item.img%>" style="width: 220px;">
+  		 		</div>
+  		 		<div class="col-md-8">
+  		 			<div class="card-body">
+  		 			<h5 class="card-title" >
+  		 				<%=item.dish%>
+  		 			</h5>
+  		 			<p class="card-text"><i><%=item.description%></i></p>
+  		 			<p class="card-text"><small class="text-muted"><%=item.price%></small></p>
+  		 			<%if(role=='admin'){%>
+            <a href="/<%=item.id%>/delete" class="btn btn-danger orange">Delete</a>
+            <a href="/<%=item.id%>/edit" class="btn btn-info">Edit</a>
+            <%}else if(role=='customer'){%>
+            <a href="/<%=item.id%>/addtocart" class="btn btn-danger orange">Add to cart</a>
+            <%}%>
+  		 		</div>
+  		 	</div>
+  		 </div>
+      </div>
+      		<%}%>
+  		<%}%>
+  </div>
+
+  <div class="tab-pane fade show" id="v-pills-dessert" role="tabpanel" aria-labelledby="v-pills-home-tab">
+  	<%for(let item of items){%>
+  	<%if(item.category==='dessert'){%>
+  		 <div class="card mb-5">
+  		 	<div class="row">
+          
+  		 		<div class="col-md-4">
+  		 			<img class="img-fluid" src="<%=item.img%>" style="width: 220px;">
+  		 		</div>
+  		 		<div class="col-md-8">
+  		 			<div class="card-body">
+  		 			<h5 class="card-title" >
+  		 				<%=item.dish%>
+  		 			</h5>
+  		 			<p class="card-text"><i><%=item.description%></i></p>
+  		 			<p class="card-text"><small class="text-muted"><%=item.price%></small></p>
+  		 			<%if(role=='admin'){%>
+            <a href="/<%=item.id%>/delete" class="btn btn-danger orange">Delete</a>
+            <a href="/<%=item.id%>/edit" class="btn btn-info">Edit</a>
+            <%}else if(role=='customer'){%>
+            <a href="/<%=item.id%>/addtocart" class="btn btn-danger orange">Add to cart</a>
+            <%}%>
+  		 		</div>
+  		 	</div>
+  		 </div>
+      </div>
+      		<%}%>
+  		<%}%>
+  </div>
+  <div class="tab-pane fade show" id="v-pills-enchiladas" role="tabpanel" aria-labelledby="v-pills-home-tab">
+  	<%for(let item of items){%>
+  	<%if(item.category==='enchiladas'){%>
+  		 <div class="card mb-5">
+  		 	<div class="row">
+          
+  		 		<div class="col-md-4">
+  		 			<img class="img-fluid" src="<%=item.img%>" style="width: 220px;">
+  		 		</div>
+  		 		<div class="col-md-8">
+  		 			<div class="card-body">
+  		 			<h5 class="card-title" >
+  		 				<%=item.dish%>
+  		 			</h5>
+  		 			<p class="card-text"><i><%=item.description%></i></p>
+  		 			<p class="card-text"><small class="text-muted"><%=item.price%></small></p>
+  		 		 <%if(role=='admin'){%>
+            <a href="/<%=item.id%>/delete" class="btn btn-danger orange">Delete</a>
+            <a href="/<%=item.id%>/edit" class="btn btn-info">Edit</a>
+            <%}else if(role=='customer'){%>
+            <a href="/<%=item.id%>/addtocart" class="btn btn-danger orange">Add to cart</a>
+            <%}%>
+  		 		</div>
+  		 	</div>
+  		 </div>
+      </div>
+      		<%}%>
+  		<%}%>
+  </div>
+</div>
+</div>
+<%let sum=0%>
+<%if(role!='admin' && role!='employee'){%>
+<div class="col-lg-3 cl-3 text-center">
+	<i class="fas fa-shopping-bag fa-10x"></i>
+		<%let i=0%>
+		<%for(let item of cart){%>
+		<%let qty= 0%>
+			<h5><%=item.dish%></h5>
+			
+        <label>Quantity: </label>
+       
+               <div class="row">
+               	<div class="col-2">
+            	<a href="/<%=item.item_id%>/remove"><button class="btn btn-sm btn-light">-</button></a>
+            </div>
+            <div class="col-8">
+            	<input type="text" id="myNumber<%=i%>" class="form-control input-number" value="<%=item.quant%>">
+            </div>
+            <div class="col-2">
+            	<a href="/<%=item.item_id%>/addtocart"><button class="btn btn-sm btn-light">+</button></a>
+            </div>
+            </div>
+            	
+			<p style="padding-bottom:10px; border-bottom: 1px solid white"><%=item.quant%>X<%=item.price%>
+				<br>
+				<a href="/<%=item.item_id%>/removeitem"><button class="btn btn-sm btn-danger">Remove</button></a></p>
+			<%sum= sum+item.price*item.quant%>
+			<%i=i+1%>
+		<%}%>
+
+		<p>Subtotal: <%=sum%></p>
+		<a href="/pay"><button class="btn btn-success">Proceed</button></a>
+</div>
+<%}%>
+</div>
+<%if(role=='admin'){%>
+<a href="/add-item"><button class="btn btn-outline-light" style="margin-top: 100px; margin-left:40%;">Add an item</button></a>
+<%}%>
+</main>
+<script src="https://kit.fontawesome.com/c8338092a9.js" crossorigin="anonymous"></script>
+	 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+     <script src="/cart.js"></script>
+</body>
+</html>

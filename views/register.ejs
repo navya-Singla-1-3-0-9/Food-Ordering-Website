@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@500&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    
+  <link rel="stylesheet"  href="/loginpage.css">
+</head>
+<body>
+  <div class="login-card text-center">
+     <img src="/logo.png" style="height:200px;">
+      <h1 style="font-weight: 500">Register</h1><br>
+  <form action="/register/<%=r%>" method="post">
+    <div class="row">
+      <div class="col-lg-6">
+        <input type="text" name="fname" placeholder="First name">
+      </div>
+      <div class="col-lg-6">
+        <input type="text" name="lname" placeholder="Last name">
+      </div>
+    </div>
+    <input type="text" name="username" placeholder="Username">
+    <input type="password" name="password" placeholder="Password">
+     <input type="text" name="address" placeholder="Address">
+     <input type="text" name="contact" placeholder="Contact Number">
+     <input type="text" name="email" placeholder="Email">
+    <input type="submit" name="login" class="login login-submit" value="Register">
+  </form>
+
+  <div class="login-help">
+    <a href="/login">Login</a>
+  </div>
+</div>
+
+    
+<script src='http://codepen.io/assets/libs/fullpage/jquery_and_jqueryui.js'></script>
+
+  <script src="https://kit.fontawesome.com/c8338092a9.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+    <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+body{
+	
+	background-image: url('div1bg2.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: black;
+	padding-left: 50px;
+	margin-bottom: 7%;
+
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+	border-radius: 0;
+    background-color: #f29305!important;
+    border-left: 5px solid white;
+	color: white!important;
+	  text-transform: uppercase;
+}
+.nav-pills{
+	background-color: black;
+	color: white;
+}
+.nav-pills .nav-link, .nav-pills .show>.nav-link {
+    text-transform: uppercase;
+	color: white!important;
+}
+main{
+	width: 80%;
+	border: 1px solid black;
+	margin-left:10%; 
+	background-color: black;
+	padding: 7% 3%;
+}
+.tab-content{
+	background-color: black;
+}
+.cl{
+	border-right: 1px solid white;
+	border-bottom: 1px solid white;
+}
+.card-title{
+	font-family: "Tangerine",cursive;
+	color:#f29305;
+	font-size: 60px;
+}
+h1{
+	font-family: "Tangerine",cursive;
+	color:white;
+	font-size: 80px;
+	border-bottom: 2px solid white;
+	margin-bottom: 40px;
+}
+.cl-3{
+	color: white;
+}
+.fa-10x{
+	padding-bottom: 30px;
+	border-bottom: 1px solid white;
+	margin-bottom: 10px;
+}
+input{
+	width:30px;
+}
+.orange{
+	background-color: #f29305;
+	border-color: #f29305;
+}
+.orange:hover{
+	background-color: #f29305;
+	border-color: #f29305;
+}

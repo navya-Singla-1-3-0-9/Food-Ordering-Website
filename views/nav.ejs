@@ -1,0 +1,49 @@
+<nav class="navbar navbar-dark navbar-expand-xxl" style="font-size:50px; padding:0.5% 10%; font-family: 'Tangerine',cursive; font-weight:900;">
+        <a class="navbar-brand" href="#" style="font-weight: 600; padding-right: 50px;"><img src="/logo.png" style="height: 70px;"></a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#content">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="content">
+            <div class="navbar-nav mr-auto">
+                <a class="nav-link active" href="/" style="padding: 20px;">Home</a>
+                <a class="nav-link active" href="/order-online" style="padding: 20px;">Order Online</a>
+                 <a class="nav-link active" href="/#contact" style="padding: 20px;">Contact us</a>
+            </div>
+            <div class="navbar-nav ml-auto">
+
+               
+                <%if(!currUser){%>
+
+                <a class="nav-link active" href="/login">Login</a>
+                <a class="nav-link active" href="/register/customer">Register</a>
+
+                <%}else{%>
+                <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img src="/dp.png" style="height: 50px; border-radius: 100%">
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="font-family: 'Arimo', sans-serif;">
+            <%if(role=='customer'){%>
+          <a class="dropdown-item" href="/my-profile">My profile</a>
+          <a class="dropdown-item" href="/myOrders">My Orders</a>
+            <%}else if(role=='employee'){%>
+            <a class="dropdown-item" href="/my-profile">My profile</a>
+          <a class="dropdown-item" href="/orders">Restaurant Orders</a>
+          <%}else{%>
+            <a class="dropdown-item" href="/my-profile">My profile</a>
+          <a class="dropdown-item" href="/sales">Restaurant Sales</a>
+          <a class="dropdown-item" href="/users">Restaurant users</a>
+          <a class="dropdown-item" href="/register/employee">Add employee</a>
+          <%}%>
+          <a class="dropdown-item" href="/logout">Logout</a>
+
+               
+        </div>
+      </div>
+       <%}%>
+                
+                
+
+            </div>
+        </div>
+</nav>

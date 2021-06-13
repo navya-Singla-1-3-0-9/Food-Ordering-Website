@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Orders</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@500&display=swap" rel="stylesheet">
+	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    
+	<link rel="stylesheet" href="/orderstyle.css">
+</head>
+<body style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuZuUm42A2eH366YxxcJlbQrAd6kJgrkgodA&usqp=CAU');">
+	<h1 class="text-center" >Product Sales</h1>
+	<div class="order-data">
+		<%let sum=0%>
+<%for(let date of dates){%>
+		<h2 class="text-center" style="color: white;"><%=date%></h2>
+		<%let sum=0%>
+	<%for(let i=0;i<=sales.length-1;i++){%>
+<%if(sales[i].date==date){%>
+	<div class="card text-center" style="background-color: black; color: white;">
+		<div class="card-body">
+			<h5 class="card-title"><%=sales[i].dish%></h5>
+			<div class="card-text">Quantity delivered: <%=sales[i].qty%></div>
+			<%sum= sum+sales[i].price*sales[i].qty%>
+			<hr>
+		</div>
+	</div>
+	
+	<%}%>
+	<%}%>
+	<h5 style="color: white; background-color: black;" class="text-center"><b>TOTAL SALES: </b><%=sum%></h5>
+	<%}%>
+	
+	</div>
+	<script src="https://kit.fontawesome.com/c8338092a9.js" crossorigin="anonymous"></script>
+	 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+     <script src="/app.js"></script>
+</body>
+</html>

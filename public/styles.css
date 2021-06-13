@@ -1,0 +1,157 @@
+body{
+	font-family: 'Arimo', sans-serif;
+
+}
+.header{
+	height:600px;
+	background-image: url('div1bg2.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: black;
+	padding-left: 50px;
+	margin-bottom: 7%;
+
+}
+h1{
+	color: white;
+	padding-top: 250px;
+	font-weight: 600;
+	text-transform: uppercase;
+	line-height: 1.5em;
+}
+.order, .order:focus{
+	background-color: #f29305;
+	color: white;
+	border:0px;
+}
+.order:hover{
+	background-color: #f29305;
+	color: white;
+	border:0px;
+}
+.browse{
+	color: #f29305;
+	border: 1px solid #f29305;
+	background-color: #3a3438;
+	margin-left: 20px;
+}
+.browse:hover{
+	background-color: #f29305;
+	color: white;
+}
+.benefits{
+	padding: 0 12%;
+	margin-bottom: 7%;
+}
+.benefits i{
+	color: #f29305;
+}
+.col-lg-4{
+	padding: 30px;
+}
+.favorites{
+	margin-bottom: 7%;
+	padding:0 12%;
+}
+.dishes{
+	background-color: black;
+}
+
+.dish{
+	opacity: 0.6;
+}
+.dish:hover{
+	opacity: 1;
+}
+.carousel{
+	margin-bottom: 3%;
+}
+.oc{
+	margin-left: 43%;
+	padding: 10px 30px;
+}
+.navbar{
+	padding:0.5% 10%;
+}
+.text{
+	color: white;
+ 	visibility: hidden;
+ 	height: 0px;
+}
+.cursive{
+	font-family: "Tangerine",cursive;
+	color:#f29305;
+	font-size: 60px;
+	font-style: bold;
+}
+.delivery-times{
+	margin:0 12% 7%;
+	
+	padding-left: 18%;
+}
+.last{
+	margin-bottom: 7%;
+	background-color: black;
+	margin-right: 12%;
+	margin-left: 12%;
+	padding: 3%;
+}
+.time-card{
+
+	border: 1px solid #f29305;
+	background-color: white;
+	width:80%;
+	padding:3%;
+
+}
+textarea{
+	height: 300px;
+}
+.contact-us{
+	padding: 5% 8%;
+}
+.b-card{
+	margin-left: 5%;
+	width:90%;
+	border:2px solid #f29305;
+	padding:5%;
+}
+.b-card h2{
+	font-weight: 900;
+}
+.time-card h2{
+	border-bottom: 2px solid #f29305;
+}
+.menu-preview{
+	background-color: black;
+	margin: 0 12% 7%;
+}
+a:link {
+  text-decoration: none;
+}
+.special{
+	margin-left: 12%;
+	margin-right: 12%;
+	margin-bottom: 7%;
+}
+.col-md-6 .about_box{
+	background-color: black;
+	color: white;
+	padding: 60px;
+	margin-right: 70px;
+}
+figure img{
+	height: 400px;
+	transform: rotate(-30deg);
+}
+.box{
+	background-color: #f29305;
+	margin-top:50px;
+	padding:30px;
+}
+.special p{
+	line-height: 1.5em;
+	font-size: 20px;
+}
